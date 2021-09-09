@@ -22,7 +22,18 @@ Created a Basic Quiz Project
 <br />
 
 ## What the Project looks like:
+1.
+![alt text](https://github.com/ayush-sleeping/Mutual-Quiz/blob/main/Screenshot/Output%201.png)
+<br />
+2.
+![alt text](https://github.com/ayush-sleeping/Mutual-Quiz/blob/main/Screenshot/Output%202.png)
+<br />
+3.
+![alt text](https://github.com/ayush-sleeping/Mutual-Quiz/blob/main/Screenshot/Output%203.png)
+<br />
 
 
 ### Made with HTML, CSS, JavaScript and VScode .
+
+
 
