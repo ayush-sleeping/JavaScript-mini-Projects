@@ -21,5 +21,8 @@ Created a Basic Quiz Project
 
 <br />
 
+## What the Project looks like:
+
+
 ### Made with HTML, CSS, JavaScript and VScode .
 
