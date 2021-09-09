@@ -1,5 +1,5 @@
 # Mutual-Quiz
-Created a Basic Quiz Project 
+Created a Basic Quiz App Project 
 
 ## Objective and Requirements:
  - Goal: Create simple and basic "Quiz app"
