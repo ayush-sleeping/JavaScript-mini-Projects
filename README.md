@@ -1,5 +1,5 @@
 # Mutual-Quiz
-Created a Basic Quiz App Project 
+Created a Basic Quiz App Project (First Time using CSS & JavaScript)
 
 ## Objective and Requirements:
  - Goal: Create simple and basic "Quiz app"
@@ -10,6 +10,7 @@ Created a Basic Quiz App Project
  - Using HTML ( Creating the structure ) 
  - Adding CSS ( creating styling )
  - Using JavaScript ( Creating the functionality )
+<hr>
 
 ### Here I have created a basic "Quiz Project" where we have to,
 - Determine the answers for the Baby names of animals.
