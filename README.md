@@ -22,7 +22,7 @@ Created a Basic Quiz App Project (First Time using CSS & JavaScript)
 
 <br />
 
-## What the Project looks like:
+## Snapshots:
 1.
 ![alt text](https://github.com/ayush-sleeping/Mutual-Quiz/blob/main/Screenshot/Output%201.png)
 <br />
