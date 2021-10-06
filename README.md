@@ -13,7 +13,7 @@ Created a Basic Quiz App Project 🚧.
 
 ##  What I am Covering:
  - Using HTML ( Creating the structure 🏗️ ) 
- - Adding CSS ( creating styling View more images 👗 )
+ - Adding CSS ( creating styling ✨ )
  - Using JavaScript ( Creating the functionality ⚙️ )
 <hr>
 
