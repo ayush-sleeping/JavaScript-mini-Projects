@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mini JavaScript Calc</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+         background-color: #111;
+         /* Dark background */
+         margin: 0;
+         padding: 0;
+         color: #00FF00;
+         /* Green text color */
+      }
+
+      .calculator {
+         max-width: 300px;
+         margin: 50px auto;
+         padding: 20px;
+         background-color: #222;
+         /* Darker background */
+         border-radius: 10px;
+         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+         transition: transform 0.2s, box-shadow 0.2s;
+         /* Add transition for transform and box-shadow */
+      }
+
+      .calculator:hover {
+         transform: scale(1.02);
+         /* Enlarge the calculator on hover */
+         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+         /* Add shadow on hover */
+      }
+
+      .display {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         margin-bottom: 10px;
+      }
+
+      #inputDisplay,
+      #resultDisplay {
+         width: 100%;
+         padding: 10px;
+         font-size: 24px;
+         border: none;
+         text-align: right;
+         background-color: #333;
+         /* Darker input display background */
+         color: #00FF00;
+         /* Green text color */
+         border-radius: 5px;
+      }
+
+      .buttons {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 10px;
+         margin-top: 10px;
+      }
+
+      button {
+         padding: 15px;
+         font-size: 20px;
+         background-color: #007f00;
+         /* Dark green button color */
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.2s;
+         /* Smooth background color change */
+      }
+
+      button:hover {
+         background-color: #005600;
+         /* Darker green on hover */
+      }
+
+      button:active {
+         background-color: #004400;
+         /* Darker green when clicked */
+      }
+
+      .operator {
+         background-color: #ff5722;
+         grid-column: span 1;
+      }
+
+      #clear {
+         background-color: #ff5722;
+      }
+
+
+      /* Calculator description styles */
+
+      .calculator-description {
+         max-width: 600px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #333;
+         /* Dark background */
+         border-radius: 10px;
+         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+         color: #fff;
+         /* White text color */
+      }
+
+      .calculator-description h2 {
+         font-size: 24px;
+         margin-bottom: 10px;
+         color: #00FF00;
+         /* Green text color */
+      }
+
+      .calculator-description p {
+         font-size: 16px;
+         margin-bottom: 10px;
+      }
+
+      .calculator-description ol {
+         padding-left: 20px;
+      }
+
+      .calculator-description li {
+         margin-bottom: 10px;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="calculator">
+      <div class="display">
+         <input type="text" id="inputDisplay" readonly>
+         <input type="text" id="resultDisplay" readonly>
+      </div>
+      <div class="buttons">
+         <button id="clear">C</button>
+         <button id="7">7</button>
+         <button id="8">8</button>
+         <button id="9">9</button>
+         <button id="divide" class="operator">/</button>
+         <button id="4">4</button>
+         <button id="5">5</button>
+         <button id="6">6</button>
+         <button id="multiply" class="operator">*</button>
+         <button id="1">1</button>
+         <button id="2">2</button>
+         <button id="3">3</button>
+         <button id="subtract" class="operator">-</button>
+         <button id="0">0</button>
+         <button id="decimal">.</button>
+         <button id="calculate" class="operator">=</button>
+         <button id="add" class="operator">+</button>
+      </div>
+   </div>
+
+   <div class="calculator-description">
+      <h2>Calculator Description</h2>
+      <p>This calculator allows you to perform basic arithmetic operations such as addition, subtraction,
+         multiplication, and division. Here's how it works:</p>
+
+      <ol>
+         <li>
+            <strong>Input Display:</strong> The top input display is where you enter numbers and operators. When you
+            press buttons, they are displayed here.
+         </li>
+         <li>
+            <strong>Result Display:</strong> The bottom result display shows the calculated result when you press the
+            '=' button.
+         </li>
+         <li>
+            <strong>Buttons:</strong> Click the buttons to enter numbers and operators. For example, click '7', then
+            '+', then '5' to enter '7 + 5'.
+         </li>
+         <li>
+            <strong>Clear Button (C):</strong> Press 'C' to clear the input and result displays.
+         </li>
+         <li>
+            <strong>Equals Button (=):</strong> Press '=' to calculate the result based on the entered expression.
+         </li>
+         <li>
+            <strong>Arithmetic Operations:</strong> You can perform addition (+), subtraction (-), multiplication (*),
+            and division (/) using this calculator.
+         </li>
+      </ol>
+
+      <h2>JavaScript Implementation</h2>
+      <p>The JavaScript code for this calculator handles user input, arithmetic operations, and result display. It uses
+         event listeners to capture button clicks and performs calculations based on the entered expression.</p>
+
+      <p>Here's a brief overview of how the JavaScript code works:</p>
+      <ul>
+         <li>The JavaScript code initializes variables to store user input, previous input, and the current operator.
+         </li>
+         <li>Event listeners are added to the calculator buttons to capture user clicks.</li>
+         <li>When a number or operator button is clicked, the corresponding value is added to the input display.</li>
+         <li>When the '=' button is clicked, the code evaluates the expression, performs the selected operation, and
+            displays the result.</li>
+         <li>The 'C' button clears the input and result displays.</li>
+         <li>The code handles basic arithmetic operations: addition, subtraction, multiplication, and division.</li>
+      </ul>
+
+   </div>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         // Get references to HTML elements
+         const inputDisplay = document.getElementById("inputDisplay");
+         const resultDisplay = document.getElementById("resultDisplay");
+         const buttons = document.querySelectorAll("button");
+
+         // Initialize variables
+         let currentInput = "";
+         let previousInput = "";
+         let operator = "";
+
+         // Function to update the input display
+         function updateInputDisplay() {
+            inputDisplay.value = currentInput;
+         }
+
+         // Function to update the result display
+         function updateResultDisplay(result) {
+            resultDisplay.value = result;
+         }
+
+         // Add event listener for each button
+         buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+               const buttonText = button.textContent;
+
+               // Handle digit and decimal point input
+               if (!isNaN(buttonText) || buttonText === ".") {
+                  currentInput += buttonText;
+                  updateInputDisplay();
+               }
+               // Handle operator input
+               else if (buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/") {
+                  operator = buttonText;
+                  previousInput = currentInput;
+                  currentInput = "";
+                  updateInputDisplay();
+               }
+               // Handle equals sign input
+               else if (buttonText === "=") {
+                  if (previousInput !== "" && currentInput !== "") {
+                     const num1 = parseFloat(previousInput);
+                     const num2 = parseFloat(currentInput);
+                     let result;
+
+                     // Perform the selected arithmetic operation
+                     switch (operator) {
+                        case "+":
+                           result = num1 + num2;
+                           break;
+                        case "-":
+                           result = num1 - num2;
+                           break;
+                        case "*":
+                           result = num1 * num2;
+                           break;
+                        case "/":
+                           // Check for division by zero
+                           if (num2 !== 0) {
+                              result = num1 / num2;
+                           } else {
+                              result = "Error";
+                           }
+                           break;
+                        default:
+                           result = "Error";
+                           break;
+                     }
+
+                     // Update the result display
+                     updateResultDisplay(result);
+                  }
+               }
+               // Handle clear input
+               else if (buttonText === "C") {
+                  // Clear all input and reset variables
+                  currentInput = "";
+                  previousInput = "";
+                  operator = "";
+
+                  // Update both input and result displays
+                  updateInputDisplay();
+                  updateResultDisplay("");
+               }
+            });
+         });
+      });
+   </script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Your enhanced CSS here */
+body {
+    font-family: 'Rokkitt', serif;
+    text-align: center;
+    background-color: #121212; /* Dark background color */
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.quizContainer {
+    background-color: #1f1f1f; /* Darker background color */
+    border-radius: 8px;
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6); /* Increased box shadow */
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.quizContainer:hover {
+    transform: scale(1.02); /* Hover effect to scale up the quiz container slightly */
+}
+
+/* Styles for the description section */
+.description {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6); /* Increased box shadow */
+}
+
+.description h2 {
+    font-family: 'Rokkitt', serif;
+    font-size: 28px; /* Larger font size */
+    color: #fff;
+}
+
+.description p {
+    font-family: 'Rokkitt', serif;
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.description ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.description li {
+    font-family: 'Rokkitt', serif;
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Improved Quiz Styles */
+.question {
+    font-size: 28px; /* Larger font size for questions */
+    padding: 20px;
+    background-color: #1f1f1f; /* Dark background for question */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Increased margin bottom */
+    color: #fff;
+}
+
+.choiceList {
+    list-style: none;
+    padding: 0;
+}
+
+.choiceList li {
+    font-size: 20px; /* Larger font size for choices */
+    margin: 10px 0; /* Increased margin */
+    background-color: #343434; /* Dark background for choices */
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners for choices */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out; /* Smooth background transition */
+}
+
+.choiceList li:hover {
+    background-color: #555; /* Dark background for choices on hover */
+}
+.nextButton {
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    background-color: #cc0000;
+    color: #fff;
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.nextButton:hover {
+    background-color: #ff0000; /* Dark red on hover */
+}
+
+.quizMessage {
+    background-color: #ffcc00; /* Yellow for quiz messages */
+    border-radius: 8px; /* Rounded message box */
+    width: 40%; /* Wider message box */
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Rokkitt', serif;
+    color: red;
+    margin-bottom: 15px; /* Increased margin bottom */
+}
+
+.result {
+    width: 40%; /* Wider result box */
+    border-radius: 8px; /* Rounded result box */
+    background-color: #ffcc00; /* Yellow for result */
+    margin: auto;
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: 'Rokkitt', serif;
+    padding: 15px; /* Increased padding */
+}
+
+.result:hover {
+    background-color: #ffdd55; /* Lighter yellow on hover */
+}

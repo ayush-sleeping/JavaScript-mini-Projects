@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #333;
+         margin: 0;
+         padding: 0;
+         color: #fff;
+      }
+      
+      .container {
+         max-width: 600px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #444;
+         border-radius: 5px;
+         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+         text-align: center;
+      }
+      
+      h1 {
+         color: #007bff;
+      }
+      
+      label {
+         font-weight: bold;
+         margin-right: 10px;
+         color: #ccc;
+      }
+      
+      #city {
+         padding: 5px;
+         border-radius: 5px;
+         background-color: #555;
+         color: #fff;
+         border: none;
+      }
+      
+      .employee-list {
+         list-style: none;
+         padding: 0;
+      }
+      
+      .employee-list li {
+         margin: 10px 0;
+         padding: 10px;
+         background-color: #444;
+         border-radius: 5px;
+         box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+      }
+      
+      .explanation {
+         max-width: 600px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #444;
+         border-radius: 5px;
+         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+         text-align: left;
+         transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+      }
+      
+      .explanation:hover {
+         box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+         background-color: #555;
+         color: #fff;
+      }
+      
+      .explanation h2 {
+         color: #007bff;
+      }
+      
+    </style>
+</head>
+<body>
+
+      <div class="container">
+          <h1>Employee Information</h1>
+          <label for="city">Select City:</label>
+          <select id="city">
+              <option value="all">All Cities</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+              <option value="bangalore">Bangalore</option>
+          </select>
+          <ul id="employeeList" class="employee-list">
+              <!-- Employee information will be displayed here -->
+          </ul>
+      </div>
+      <div class="explanation">
+          <h2>How It Works</h2>
+          <p>This simple web application allows you to filter and display employee information based on their city of residence.</p>
+          <p>Here's a brief overview of how the JavaScript code works:</p>
+          <ol>
+              <li>We have sample employee data stored in an array.</li>
+              <li>When you select a city from the dropdown, an event listener is triggered.</li>
+              <li>The JavaScript code filters the employees based on the selected city or "All Cities" and updates the list accordingly.</li>
+          </ol>
+      </div>
+    <script>
+      // Sample Employee data
+const employees = [
+{ name: "Ayush", city: "Mumbai", designation: "Software Developer" },
+{ name: "Satyam", city: "Delhi", designation: "UI/UX" },
+{ name: "Arpita", city: "Bangalore", designation: "Designer" },
+{ name: "Pradeep", city: "Mumbai", designation: "HR" },
+{ name: "Abhi", city: "Delhi", designation: "Developer" },
+];
+
+// Function to filter and display employees
+function displayEmployees(city) {
+const employeeList = document.getElementById("employeeList");
+employeeList.innerHTML = "";
+
+employees.forEach(employee => {
+    if (city === "all" || employee.city.toLowerCase() === city.toLowerCase()) {
+        const li = document.createElement("li");
+        li.textContent = `Name: ${employee.name}, City: ${employee.city}, Designation: ${employee.designation}`;
+        employeeList.appendChild(li);
+    }
+});
+}
+
+// Event listener for the city select dropdown
+const citySelect = document.getElementById("city");
+citySelect.addEventListener("change", () => {
+const selectedCity = citySelect.value;
+displayEmployees(selectedCity);
+});
+
+// Initial display of all employees
+displayEmployees("all");
+
+    </script>
+</body>
+</html>

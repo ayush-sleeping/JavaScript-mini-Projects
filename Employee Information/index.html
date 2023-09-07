@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+      <div class="container">
+          <h1>Employee Information</h1>
+          <label for="city">Select City:</label>
+          <select id="city">
+              <option value="all">All Cities</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+              <option value="bangalore">Bangalore</option>
+          </select>
+          <ul id="employeeList" class="employee-list">
+              <!-- Employee information will be displayed here -->
+          </ul>
+      </div>
+      <div class="explanation">
+          <h2>How It Works</h2>
+          <p>This simple web application allows you to filter and display employee information based on their city of residence.</p>
+          <p>Here's a brief overview of how the JavaScript code works:</p>
+          <ol>
+              <li>We have sample employee data stored in an array.</li>
+              <li>When you select a city from the dropdown, an event listener is triggered.</li>
+              <li>The JavaScript code filters the employees based on the selected city or "All Cities" and updates the list accordingly.</li>
+          </ol>
+      </div>
+    <script src="./script.js"></script>
+</body>
+</html>
